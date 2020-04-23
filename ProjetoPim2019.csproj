@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72129747-A0F9-45C0-9478-1545D6500F0C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoLogin</RootNamespace>
+    <AssemblyName>ProjetoLogin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Azure.Management.Sql, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\AlterarPecas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\AlterarPecas.Designer.cs">
+      <DependentUpon>AlterarPecas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\CadastrarPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\CadastrarPeca.Designer.cs">
+      <DependentUpon>CadastrarPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\ConsultarPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\ConsultarPeca.Designer.cs">
+      <DependentUpon>ConsultarPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\ExcluirPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIEstoquePeças\ExcluirPeca.Designer.cs">
+      <DependentUpon>ExcluirPeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\AlterarManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\AlterarManutencao.Designer.cs">
+      <DependentUpon>AlterarManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\CadastrarManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\CadastrarManutencao.Designer.cs">
+      <DependentUpon>CadastrarManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\ConsultarManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\ConsultarManutencao.Designer.cs">
+      <DependentUpon>ConsultarManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\ExcluirManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIManutenção\ExcluirManutencao.Designer.cs">
+      <DependentUpon>ExcluirManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\Complementos\IncluirDependentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\Complementos\IncluirDependentes.Designer.cs">
+      <DependentUpon>IncluirDependentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\Complementos\SeguroVida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\Complementos\SeguroVida.Designer.cs">
+      <DependentUpon>SeguroVida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\AlterarMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\AlterarMotorista.Designer.cs">
+      <DependentUpon>AlterarMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\CadastrarMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\CadastrarMotorista.Designer.cs">
+      <DependentUpon>CadastrarMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\CadastreSe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\CadastreSe.Designer.cs">
+      <DependentUpon>CadastreSe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\ConsultaMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\ConsultaMotorista.Designer.cs">
+      <DependentUpon>ConsultaMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIRelatorios\CadastrarRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIRelatorios\CadastrarRelatorio.Designer.cs">
+      <DependentUpon>CadastrarRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISeguroVeiculo\ConsultarSeguroVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISeguroVeiculo\ConsultarSeguroVeiculo.Designer.cs">
+      <DependentUpon>ConsultarSeguroVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISeguroVida\SeguroVida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISeguroVida\SeguroVida.Designer.cs">
+      <DependentUpon>SeguroVida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\exeption.cs" />
+    <Compile Include="Apresentacao.UI\UIViagens\AlterarViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\AlterarViagem.Designer.cs">
+      <DependentUpon>AlterarViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\CadastrarViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\CadastrarViagem.Designer.cs">
+      <DependentUpon>CadastrarViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\ConsultarViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\ConsultarViagem.Designer.cs">
+      <DependentUpon>ConsultarViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\ExcluirViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIViagens\ExcluirViagem.Designer.cs">
+      <DependentUpon>ExcluirViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\AlterarSinistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\AlterarSinistro.Designer.cs">
+      <DependentUpon>AlterarSinistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\CadastrarSinistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\CadastrarSinistro.Designer.cs">
+      <DependentUpon>CadastrarSinistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\ConsultarSinistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\ConsultarSinistro.Designer.cs">
+      <DependentUpon>ConsultarSinistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\ExcluirSinistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISinistro\ExcluirSinistro.Designer.cs">
+      <DependentUpon>ExcluirSinistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISuporte\Contato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UISuporte\Contato.Designer.cs">
+      <DependentUpon>Contato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\AlterarVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\AlterarVeiculo.Designer.cs">
+      <DependentUpon>AlterarVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\CadastrarVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\CadastrarVeiculo.Designer.cs">
+      <DependentUpon>CadastrarVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\ConsultarVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\ConsultarVeiculo.Designer.cs">
+      <DependentUpon>ConsultarVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\ExcluirVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIVeiculo\ExcluirVeiculo.Designer.cs">
+      <DependentUpon>ExcluirVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlador\CadastrarController.cs" />
+    <Compile Include="Dados.Dal\Conexao.cs" />
+    <Compile Include="Dados.Dal\Interface\IRepostiory.cs" />
+    <Compile Include="Dados.Dal\LoginDalComandos.cs" />
+    <Compile Include="Dados.Dal\Repositorio\UsuarioRepository.cs" />
+    <Compile Include="Dados.Dal\Repositorio\Repository.cs" />
+    <Compile Include="Apresentacao.UI\UIMotoristas\ExcluirMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao.UI\UIMotoristas\ExcluirMotorista.Designer.cs">
+      <DependentUpon>ExcluirMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ClassesDoProjeto\Dependentes.cs" />
+    <Compile Include="Modelo\ClassesDoProjeto\incluirManutencao.cs" />
+    <Compile Include="Modelo\ClassesDoProjeto\incluirPecas.cs" />
+    <Compile Include="Modelo\ClassesDoProjeto\incluirSinistro.cs" />
+    <Compile Include="Modelo\ClassesDoProjeto\IncluirVeiculo.cs" />
+    <Compile Include="Modelo\ClassesDoProjeto\incluirViagens.cs" />
+    <Compile Include="Modelo\Controle.cs" />
+    <Compile Include="Modelo\ClassesDoProjeto\incluirMotorista.cs" />
+    <Compile Include="Modelo\UsuarioEntity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ClearTextBtn.cs" />
+    <Compile Include="Utils\SendMail.cs" />
+    <Compile Include="Utils\ValidadorCpf.cs" />
+    <EmbeddedResource Include="Apresentacao.UI\UIEstoquePeças\AlterarPecas.resx">
+      <DependentUpon>AlterarPecas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIEstoquePeças\CadastrarPeca.resx">
+      <DependentUpon>CadastrarPeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIEstoquePeças\ConsultarPeca.resx">
+      <DependentUpon>ConsultarPeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIEstoquePeças\ExcluirPeca.resx">
+      <DependentUpon>ExcluirPeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIManutenção\AlterarManutencao.resx">
+      <DependentUpon>AlterarManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIManutenção\CadastrarManutencao.resx">
+      <DependentUpon>CadastrarManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIManutenção\ConsultarManutencao.resx">
+      <DependentUpon>ConsultarManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIManutenção\ExcluirManutencao.resx">
+      <DependentUpon>ExcluirManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIMotoristas\Complementos\IncluirDependentes.resx">
+      <DependentUpon>IncluirDependentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIMotoristas\Complementos\SeguroVida.resx">
+      <DependentUpon>SeguroVida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIMotoristas\AlterarMotorista.resx">
+      <DependentUpon>AlterarMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIMotoristas\CadastrarMotorista.resx">
+      <DependentUpon>CadastrarMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\CadastreSe.resx">
+      <DependentUpon>CadastreSe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIMotoristas\ConsultaMotorista.resx">
+      <DependentUpon>ConsultaMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIMotoristas\ExcluirMotorista.resx">
+      <DependentUpon>ExcluirMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIRelatorios\CadastrarRelatorio.resx">
+      <DependentUpon>CadastrarRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISeguroVeiculo\ConsultarSeguroVeiculo.resx">
+      <DependentUpon>ConsultarSeguroVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISeguroVida\SeguroVida.resx">
+      <DependentUpon>SeguroVida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIViagens\AlterarViagem.resx">
+      <DependentUpon>AlterarViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIViagens\CadastrarViagem.resx">
+      <DependentUpon>CadastrarViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIViagens\ConsultarViagem.resx">
+      <DependentUpon>ConsultarViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIViagens\ExcluirViagem.resx">
+      <DependentUpon>ExcluirViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISinistro\AlterarSinistro.resx">
+      <DependentUpon>AlterarSinistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISinistro\CadastrarSinistro.resx">
+      <DependentUpon>CadastrarSinistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISinistro\ConsultarSinistro.resx">
+      <DependentUpon>ConsultarSinistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISinistro\ExcluirSinistro.resx">
+      <DependentUpon>ExcluirSinistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UISuporte\Contato.resx">
+      <DependentUpon>Contato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIVeiculo\AlterarVeiculo.resx">
+      <DependentUpon>AlterarVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIVeiculo\CadastrarVeiculo.resx">
+      <DependentUpon>CadastrarVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIVeiculo\ConsultarVeiculo.resx">
+      <DependentUpon>ConsultarVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao.UI\UIVeiculo\ExcluirVeiculo.resx">
+      <DependentUpon>ExcluirVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagemTela.jpeg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
